@@ -14,7 +14,7 @@ if (isset($_REQUEST['page'])){
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Fruit</title>
+    <title>VietFruit</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,11 +22,13 @@ if (isset($_REQUEST['page'])){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 
 <div class="container">
     <a href="add-product.php" type="button" class="btn btn-outline-success mb-3 mt-3 btn-lg">ADD PRODUCT</a>
+    <a href="index.php" type="button" class="btn btn-outline-success mb-3 mt-3 btn-lg">Trang chủ</a>
     <table class="table">
         <thead>
         <tr>
@@ -36,9 +38,9 @@ if (isset($_REQUEST['page'])){
             <th scope="col">Image</th>
             <th scope="col">Describe</th>
             <th scope="col">Price</th>
-            <th scope="col">Create</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Address</th>
+<!--            <th scope="col">Create</th>-->
+<!--            <th scope="col">Phone</th>-->
+<!--            <th scope="col">Address</th>-->
         </tr>
         </thead>
         <tbody>
@@ -48,14 +50,12 @@ if (isset($_REQUEST['page'])){
                 <td><?php echo $product->getId()?></td>
                 <td><?php echo $product->getName()?></td>
                 <td><?php echo $product->getSource()?></td>
-                <td><?php echo $product->getImage()?></td>
+                <td><img style="width: 100px" src="<?php echo $product->getImage()?>"></td>
                 <td><?php echo $product->getDescribe()?></td>
                 <td><?php echo $product->getPrice()?></td>
-                <td><?php echo $product->getCreate()?></td>
-                <td><?php echo $product->getPhone()?></td>
-                <td><?php echo $product->getAddress()?></td>
                 <td><a href="home.php?page=delete&id=<?php echo $key ?>">Delete</a></td>
                 <td><a href="edit-product.php?id=<?php echo $product->getId() ?>">Edit</a></td>
+<!--                <td><a href="buy.php">Buy</a></td>-->
             </tr>
         <?php endforeach; ?>
 
